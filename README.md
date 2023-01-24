@@ -40,6 +40,10 @@ You can run the server with an argument of `-url` or `--public_url` and the url 
  ### Setting your phone number to reach the server
 
  Go to your number settings in Twilio or Signalwire and set the Voice URL section (May be called something else) to go to your public URL and add a suffix of `/begin`.  So if your URL is `counts.mydomain.com` then you would enter `http://counts.mydomain.com/begin`
+ 
+ ## Getting the counts
+ 
+ You can see the current yes and no counts by going to the URL with a path of `getcounts`.  For example, if your URL is `counts.mydomain.com`, you would browse to `http://counts.mydomain.com/getcounts`
 
  ## Docker
 
