@@ -31,7 +31,7 @@ By default, the app will set `localhost` as the base URL
 
 * PUBLIC_URL Envrionment variable
 
-You can set an envrionment variable of `PUBLIC_URL` to your DNS name or IP.  For example, if using a server with a public IP of 12.34.56.78, the environment variable would be set to `http://12.34.56.78
+You can set an envrionment variable of `PUBLIC_URL` to your DNS name or IP.  For example, if using a server with a public IP of 12.34.56.78, the environment variable would be set to `http://12.34.56.78`
 
 * url or public_url argument
 
