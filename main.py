@@ -1,16 +1,40 @@
 from flask import Flask,request,Response
 from functools import wraps
-import os
-
-server_port = 8080
+import os,argparse
 
 yes_count = 0
 no_count = 0
 
-if os.environ.get('PUBLIC_URL'):
-    public_url = os.environ.get('PUBLIC_URL')
-else:
-    public_url = "http://localhost:" + str(server_port)
+parser = argparse.ArgumentParser()
+parser.add_argument("-url", "--public_url", action="store")
+parser.add_argument("-p", "--port", action="store")
+args = parser.parse_args()
+
+def get_port(args):
+    if os.environ.get('SERVER_PORT'):
+        server_port = int(os.environ.get('SERVER_PORT'))
+        return server_port
+    elif args.port:
+        server_port = int(args.port)
+        return server_port
+    else:
+        server_port = 8080
+        return server_port
+
+server_port = get_port(args)
+
+def get_url(args):
+    if os.environ.get('PUBLIC_URL'):
+        public_url = os.environ.get('PUBLIC_URL')
+        return public_url
+    elif args.public_url:
+        public_url = args.public_url
+        return public_url
+    else:
+        public_url = "http://localhost:" + str(server_port)
+        return public_url
+
+public_url = get_url(args)
 
 resp_get_digits = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
@@ -85,4 +109,4 @@ def getcounts():
 
 # Run the thing
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=False,port=8080)
+    app.run(host="0.0.0.0",debug=False,port=server_port)
