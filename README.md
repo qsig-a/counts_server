@@ -9,7 +9,7 @@
 
 ## Running
 
-In order to use this with Twilio or Signalwire, you will have to have a system that is either publicly accessible or use a service like Ngrok (which forwards local traffic to a publicly accessible host to your local machine)
+In order to use this with Twilio or Signalwire, you will have to have a system that is either publicly accessible or use a service like [Ngrok](https://ngrok.com/) (which forwards local traffic to a publicly accessible host to your local machine)
 
 In order for the digits to be captured properly, you do need to set the port of the server and the URL of the server.
 
