@@ -76,13 +76,13 @@ def home():
     return "Hello! I am the counts bot"
 
 @app.route("/begin")
-# Home/Health Check?
+# Beginning XML
 def begin():
     return Response(resp_get_digits,mimetype='text/xml')
 
 
 @app.route("/count",methods=['POST'])
-# Post message to Vestaboard
+# Add to counts
 def count():
     global yes_count
     global no_count
@@ -101,7 +101,7 @@ def count():
         return Response(resp_nodigit,mimetype='text/xml')
 
 @app.route("/getcounts",methods=['GET'])
-# Post message to Vestaboard
+# Get Counts
 def getcounts():
     global yes_count
     global no_count
