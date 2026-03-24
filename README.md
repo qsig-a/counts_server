@@ -1,4 +1,8 @@
 # counts_server
+
+> [!WARNING]
+> **This repository is archived and no longer maintained.**
+
  A basic TwiML/LiML server that counts yes and no answers based on calls coming in.
 
  ## Prerequisites
